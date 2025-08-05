@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Verifikasi Nomor Telepon</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-light d-flex flex-column min-vh-100">
+    <!-- HEADER -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <strong>Aplikasi Sadap v1.0</strong>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarNav"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Beranda</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Tentang</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Kontak</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- FORM -->
+    <div class="container mt-5 mb-4 flex-grow-1">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card shadow">
+            <div class="card-body">
+              <h4 class="card-title text-center mb-4">
+                Masukkan Nomor Telepon Target
+              </h4>
+              <form id="phoneForm">
+                <div class="mb-3">
+                  <label for="phoneNumber" class="form-label"
+                    >Nomor Telepon</label
+                  >
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="phoneNumber"
+                    placeholder="Contoh: 08xxxxxxxxxx"
+                    required
+                  />
+                </div>
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-primary">Lanjut</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div
+            class="alert alert-warning alert-dismissible fade show mt-4 d-none"
+            id="verificationAlert"
+            role="alert"
+          >
+            <strong>Perhatian!</strong> Nomor yang Anda masukkan dilindungi oleh
+            verifikasi 2 langkah. <br />Silakan upgrade aplikasi Anda untuk
+            dapat menyadap nomor tersebut.
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="alert"
+              aria-label="Tutup"
+            ></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="bg-dark text-light text-center py-3 mt-auto">
+      <div class="container">
+        <p class="mb-0">
+          © 2025 Aplikasi Sadap v 1.0 | Semua Hak & Privasi Dilindungi
+        </p>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document
+        .getElementById("phoneForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          const alertBox = document.getElementById("verificationAlert");
+          alertBox.classList.remove("d-none");
+        });
+    </script>
+  </body>
+</html>
